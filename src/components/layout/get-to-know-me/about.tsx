@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function About() {
     return (
         <Wrapper>
-            <div id='about' className='w-full flex flex-col-reverse md:flex-row gap-12 mt-32 pb-32'>
+            <div id='about' className='w-full flex flex-col-reverse md:flex-row gap-12 pt-32 pb-32'>
                 <div className='w-full md:w-1/2 text-left'>
                     <h1 style={{ lineHeight: 1.3 }} className='text-3xl font-bold mb-6 font-jakarta text-[#1e293b] md:text-5xl'>
                         We help teams<br /> build the business<br /> of their dreams

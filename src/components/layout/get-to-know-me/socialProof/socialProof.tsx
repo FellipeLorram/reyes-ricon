@@ -63,16 +63,17 @@ export function SocialProof() {
             style={{
                 background: 'linear-gradient(90deg, rgba(230,219,255,1) 0%, #d4c2ff 95%)'
             }}
-            className='bg-violet-500/10 md:py-28  overflow-hidden'>
+            className='bg-violet-500/10 md:py-28  overflow-hidden'
+        >
             <div className='hidden w-full md:flex gap-6 flex-row justify-between'>
                 {testimonials.map(({ image, testimony, name }) => (
                     <Card key={name} image={image} testimony={`${testimony.split(' ').slice(0, 45).join(' ')}...`} name={name} />
                 ))}
             </div>
-            <div className='md:hidden flex items-center justify-center w-full relative h-screen'>
+            <div className='md:hidden flex items-center flex-col justify-end pb-6 w-full relative h-screen'>
                 <AnimatePresence initial={false} custom={direction}>
                     <Card
-                        className='absolute inset-10 inset-y-20'
+                        className='absolute inset-y-20 inset-x-0 px-10'
                         key={page}
                         image={testimonials[cardIndex].image}
                         testimony={testimonials[cardIndex].testimony.split(' ').slice(0, 45).join(' ') + '...'}
@@ -100,9 +101,9 @@ export function SocialProof() {
                         }}
                     />
                 </AnimatePresence>
-                <div className='flex w-full justify-between flex-row'>
-                    <ChevronLeft className='stroke-zinc-500 w-10 h-10' onClick={() => paginate(1)} />
-                    <ChevronRight className='stroke-zinc-500 w-10 h-10' onClick={() => paginate(-1)} />
+                <div className='flex w-full justify-between flex-row z-10'>
+                    <ChevronLeft className='stroke-zinc-500 w-10 h-10' onClick={() => paginate(-1)} />
+                    <ChevronRight className='stroke-zinc-500 w-10 h-10' onClick={() => paginate(1)} />
                 </div>
             </div>
         </Wrapper>
