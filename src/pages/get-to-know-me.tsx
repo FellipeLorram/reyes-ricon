@@ -1,4 +1,5 @@
 import About from '@/components/layout/get-to-know-me/about'
+import { Contact } from '@/components/layout/get-to-know-me/contact/contact'
 import { Main } from '@/components/layout/get-to-know-me/main'
 import { Services } from '@/components/layout/get-to-know-me/services'
 import { SocialProof } from '@/components/layout/get-to-know-me/socialProof/socialProof'
@@ -13,6 +14,7 @@ export default function GetToKnowMe() {
             <About />
             <SocialProof />
             <WhyUs />
+            <Contact />
         </>
     )
 }
