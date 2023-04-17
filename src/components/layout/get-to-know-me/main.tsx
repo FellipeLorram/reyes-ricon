@@ -11,7 +11,7 @@ export function Main() {
             <div className='w-full flex flex-col max-w-[1240px]'>
                 <Navbar />
 
-                <div className='w-full flex flex-col md:flex-row items-center self-stretch justify-center mt-8 md:mt-16 md:p-8 p-2'>
+                <div className='w-full flex flex-col md:flex-row items-center self-stretch justify-center h-full md:p-8 p-2'>
 
                     <div className='items-center md:items-start flex flex-col gap-8 md:w-2/3'>
                         <h1 className='md:text-6xl sm:text-5xl text-4xl font-bold font-jakarta'>Your Idea Matters!</h1>
