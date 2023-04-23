@@ -1,109 +1,77 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { Wrapper } from '../../wrapper'
-import { Card, CardProps } from './card'
-import { ChevronLeft } from '@/assets/svg/chevronLeft';
-import { ChevronRight } from '@/assets/svg/chevronRight';
 
-const variants = {
-    enter: (direction: number) => {
-        return {
-            x: direction > 0 ? 1500 : -1500,
-            opacity: 0
-        };
-    },
-    center: {
-        zIndex: 1,
-        x: 0,
-        opacity: 1
-    },
-    exit: (direction: number) => {
-        return {
-            zIndex: 0,
-            x: direction < 0 ? 1500 : -1500,
-            opacity: 0
-        };
-    }
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-};
+const images = [
+    { src: '/images/logo-ediouro.png', width: 91, height: 1016, alt: '' },
+    { src: '/images/logo-fgv.png', width: 91, height: 4096, alt: '' },
+    { src: '/images/logo-ismb.png', width: 91, height: 125, alt: '' },
+    { src: '/images/logo-santillana.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-descomplica.png', width: 91, height: 346, alt: '' },
+    { src: '/images/logo-ftdtrans.png', width: 91, height: 1204, alt: '' },
+    { src: '/images/logo-moderna-rodape.png', width: 91, height: 43, alt: '' },
+    { src: '/images/logo-richmod.png', width: 91, height: 36, alt: '' },
+    { src: '/images/logo-robertomarinho.png', width: 91, height: 299, alt: '' },
+    { src: '/images/logo-sabesp.png', width: 91, height: 348, alt: '' },
+    { src: '/images/logo-topo.png', width: 91, height: 110, alt: '' },
+    { src: '/images/logo-tse.png', width: 91, height: 4027, alt: '' },
+]
 
 export function SocialProof() {
-    const [[page, direction], setPage] = useState([0, 0]);
-    const cardIndex = wrap(0, 3, page);
-
-    const paginate = (newDirection: number) => {
-        setPage([page + newDirection, newDirection]);
-    };
-
-    const testimonials: CardProps[] = [
-        {
-            image: '/avatar.jpg',
-            testimony: '"Trabalhar com [nome do profissional] foi uma experiência incrível! Desde o início, ele foi muito atencioso e fez questão de entender minhas necessidades e objetivos. O resultado final foi um trabalho excepcional, que superou minhas expectativas. Recomendo [nome do profissional] sem hesitação para quem busca um trabalho de qualidade e um profissional comprometido."',
-            name: 'John Doe'
-        },
-        {
-            image: '/avatar.jpg',
-            testimony: '"Eu tive o prazer de trabalhar com [nome do profissional] em um projeto recente e fiquei muito impressionado com sua habilidade e expertise. Ele trouxe uma perspectiva única para o projeto e seu trabalho foi essencial para alcançarmos nossos objetivos. Além disso, ele foi extremamente profissional e fácil de trabalhar. Não hesitaria em recomendar [nome do profissional] a qualquer pessoa que precise de um trabalho de qualidade e um parceiro confiável."',
-            name: 'John Doesnt'
-        },
-        {
-            image: '/avatar.jpg',
-            testimony: '"Eu contratei [nome do profissional] para criar meu novo site e fiquei muito feliz com o resultado. Ele foi capaz de traduzir minhas ideias em um design elegante e funcional, que refletia perfeitamente a identidade da minha marca. Além disso, ele foi muito ágil em responder minhas dúvidas e fazer ajustes conforme necessário. Recomendo [nome do profissional] para quem busca um profissional criativo e comprometido."',
-            name: 'Joana Doe'
-        },
-    ]
-
     return (
         <Wrapper
+            id='reviews'
             style={{
-                background: 'linear-gradient(90deg, rgba(230,219,255,1) 0%, #d4c2ff 95%)'
+                background: 'linear-gradient(90deg, rgba(230,219,255,1) 0%, #d4c2ff 80%)'
             }}
-            className='bg-violet-500/10 md:py-28  overflow-hidden'
+            className='bg-violet-500/10 py-14 md:py-28 overflow-hidden'
         >
-            <div className='hidden w-full md:flex gap-6 flex-row justify-between'>
-                {testimonials.map(({ image, testimony, name }) => (
-                    <Card key={name} image={image} testimony={`${testimony.split(' ').slice(0, 45).join(' ')}...`} name={name} />
-                ))}
-            </div>
-            <div className='md:hidden flex items-center flex-col justify-end pb-6 w-full relative h-screen'>
-                <AnimatePresence initial={false} custom={direction}>
-                    <Card
-                        className='absolute inset-y-20 inset-x-0 px-10'
-                        key={page}
-                        image={testimonials[cardIndex].image}
-                        testimony={testimonials[cardIndex].testimony.split(' ').slice(0, 45).join(' ') + '...'}
-                        name={testimonials[cardIndex].name}
-                        custom={direction}
-                        variants={variants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                            x: { type: "spring", stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 }
-                        }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={0.2}
-                        onDragEnd={(e, { offset, velocity }) => {
-                            const swipe = swipePower(offset.x, velocity.x);
-
-                            if (swipe < -swipeConfidenceThreshold) {
-                                paginate(1);
-                            } else if (swipe > swipeConfidenceThreshold) {
-                                paginate(-1);
-                            }
-                        }}
-                    />
-                </AnimatePresence>
-                <div className='flex w-full justify-between flex-row z-10'>
-                    <ChevronLeft className='stroke-zinc-500 w-10 h-10' onClick={() => paginate(-1)} />
-                    <ChevronRight className='stroke-zinc-500 w-10 h-10' onClick={() => paginate(1)} />
+            <div className='w-full flex flex-col gap-4 items-start justify-center '>
+                <h1 className='text-4xl font-jakarta text-[#1e293b] font-medium mb-8'>
+                    Parceiros
+                </h1>
+                <div className='w-full gap-1 flex items-center justify-center scrollLeftAnimation'>
+                    {images.map(({
+                        src,
+                        width,
+                        height,
+                        alt
+                    }, index) => (
+                        <div className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
+                            <Image
+                                className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
+                                key={index * 10}
+                                src={src}
+                                width={width}
+                                height={height}
+                                alt={alt}
+                            />
+                        </div>
+                    ))}
+                </div>
+                <div
+                    className='w-full gap-1 flex items-center justify-center scrollLeftAnimation md:hidden'
+                >
+                    {images.sort((a, b) => {
+                        return a.src.length - b.src.length
+                    }).map(({
+                        src,
+                        width,
+                        height,
+                        alt
+                    }) => (
+                        <div className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
+                            <Image
+                                className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
+                                key={src}
+                                src={src}
+                                width={width}
+                                height={height}
+                                alt={alt}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         </Wrapper>

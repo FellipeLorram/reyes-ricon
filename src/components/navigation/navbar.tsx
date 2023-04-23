@@ -21,7 +21,9 @@ export function Navbar() {
 
     return (
         <nav className='w-full flex justify-between items-center p-8 md:gap-4 md:flex-row'>
+
             <div>LOGO</div>
+
             <div className="md:flex flex-row gap-8 hidden">
                 <NavLink href='#home' main>Home</NavLink>
                 {links.map(({ href, label }) => (
@@ -30,10 +32,13 @@ export function Navbar() {
                     </NavLink>
                 ))}
             </div>
+
             <MenuIcon className='md:hidden' />
+            
             {open && (
                 <></>
             )}
+
         </nav>
     );
 }
