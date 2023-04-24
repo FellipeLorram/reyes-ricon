@@ -38,10 +38,10 @@ export function SocialProof() {
                         height,
                         alt
                     }, index) => (
-                        <div className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
+                        <div key={index * 10} className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
                             <Image
                                 className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
-                                key={index * 10}
+                                
                                 src={src}
                                 width={width}
                                 height={height}
@@ -61,10 +61,10 @@ export function SocialProof() {
                         height,
                         alt
                     }) => (
-                        <div className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
+                        <div key={src} className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
                             <Image
                                 className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
-                                key={src}
+                                
                                 src={src}
                                 width={width}
                                 height={height}
