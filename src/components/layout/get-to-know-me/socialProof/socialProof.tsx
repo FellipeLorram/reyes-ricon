@@ -27,9 +27,9 @@ export function SocialProof() {
             }}
             className='bg-violet-500/10 py-14 md:py-28 overflow-hidden'
         >
-            <div className='w-full flex flex-col gap-4 items-start justify-center '>
-                <h1 className='text-4xl font-jakarta text-[#1e293b] font-medium mb-8'>
-                    Parceiros
+            <div className='w-full flex flex-col gap-8 items-start justify-center '>
+                <h1 style={{ lineHeight: 1.3 }} className='text-3xl font-bold mb-6 font-jakarta text-[#1e293b] md:text-4xl'>
+                    Parceiros que transformaram <br/> suas ideias em realidade
                 </h1>
                 <div className='w-full gap-1 flex items-center justify-center scrollLeftAnimation'>
                     {images.map(({
@@ -41,7 +41,7 @@ export function SocialProof() {
                         <div key={index * 10} className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
                             <Image
                                 className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
-                                
+
                                 src={src}
                                 width={width}
                                 height={height}
@@ -64,7 +64,7 @@ export function SocialProof() {
                         <div key={src} className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
                             <Image
                                 className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
-                                
+
                                 src={src}
                                 width={width}
                                 height={height}

@@ -9,25 +9,31 @@ export function WhyUs() {
         {
             icon: <Passionate />,
             title: 'Passionate',
-            description: 'Tempor ullamcorper urna, est, lectus amet sit tempor pretium mi sed morbi cras posuere sit ultrices bibendum augue sit ornare.'
+            description: 'Somos caçadores de inovações na área de tecnologia e educação tanto no mercado quanto na Academia.'
         },
         {
             icon: <Professional />,
             title: 'Professional',
-            description: 'Tempor ullamcorper urna, est, lectus amet sit tempor pretium mi sed morbi cras posuere sit ultrices bibendum augue sit ornare.t'
+            description: 'Com o nosso time você tem a certeza de contar com todas as competências necessárias para trazer o seu projeto à vida.'
         },
         {
             icon: <Support />,
             title: 'Support',
-            description: 'Tempor ullamcorper urna, est, lectus amet sit tempor pretium mi sed morbi cras posuere sit ultrices bibendum augue sit ornare.'
+            description: `Design Instrucional, Gráfico e de Jogos
+            Produção Audiovisual e Editorial
+            Ludologia, Pedagogia e Andragogia
+            Gestão e desenvolvimento de Produtos Digitais`
         },
     ]
 
     return (
-        <Wrapper>
+        <Wrapper
+            id='why-us'
+        >
             <div className='w-full flex flex-col gap-4 py-28'>
-                <h1>Why Choose Us</h1>
-
+                <h1 style={{ lineHeight: 1.3 }} className='text-3xl font-bold mb-6 font-jakarta text-[#1e293b] md:text-5xl'>
+                    Porque nós
+                </h1>
                 <div className='flex flex-col items-center md:flex-row justify-between'>
                     {cards.map(({ icon, title, description }) => (
                         <Card key={title} icon={icon} title={title} description={description} />

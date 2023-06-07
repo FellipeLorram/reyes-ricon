@@ -2,9 +2,10 @@ import React from 'react'
 
 interface Props extends React.SVGProps<SVGSVGElement> { }
 
-export function MenuIcon({ className }: Props) {
+export function MenuIcon({ className, ...props }: Props) {
     return (
         <svg
+            {...props}
             xmlns="http://www.w3.org/2000/svg"
             width="28"
             height="28"

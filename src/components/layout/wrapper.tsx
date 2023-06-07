@@ -7,7 +7,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement>{
 export function Wrapper({ children, className, ...props }: Props) {
     return (
         <div {...props} className={`flex items-center justify-center ${className}`}>
-            <div className='w-11/12 max-w-[1240px]'>
+            <div className='w-11/12 max-w-[1340px]'>
                 {children}
             </div>
         </div>

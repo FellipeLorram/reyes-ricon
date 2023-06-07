@@ -2,8 +2,11 @@ import { BrandFacebook } from '@/assets/svg/brand-facebook';
 import { BrandInstagram } from '@/assets/svg/brand-instagram';
 import { BrandTwitter } from '@/assets/svg/brand-twitter';
 import { MenuIcon } from '@/assets/svg/menu';
+import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link'
 import React, { useState } from 'react'
+import MobileNavbar from './mobileNavbar';
+import { X } from 'lucide-react';
 
 export function Navbar() {
     const [open, setOpen] = useState(false);
@@ -12,7 +15,7 @@ export function Navbar() {
         { href: '#services', label: 'Serviços' },
         { href: '#about', label: 'Sobre' },
         { href: '#reviews', label: 'Reviews' },
-        { href: '#whyus', label: 'Porque Eu' },
+        { href: '#why-us', label: 'Porque Eu' },
         { href: '#contact', label: 'Contato' },
         { href: '/instagram', label: <BrandInstagram className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
         { href: '/facebook', label: <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
@@ -32,13 +35,33 @@ export function Navbar() {
                     </NavLink>
                 ))}
             </div>
+            <div className='md:hidden flex flex-row gap-4'>
+                <Link href='/contact'>
+                    <BrandInstagram className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
+                </Link>
+                <Link href='/contact'>
+                    <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
+                </Link>
+                <Link href='/contact'>
+                    <BrandFacebook className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
+                </Link>
+                {!open ? (
+                    <MenuIcon
+                        onClick={() => setOpen(true)}
+                    />
 
-            <MenuIcon className='md:hidden' />
-            
-            {open && (
-                <></>
-            )}
-
+                ) : (
+                    <X  
+                        strokeWidth={1}
+                        onClick={() => setOpen(false)}
+                    />
+                )}
+            </div>
+            <AnimatePresence>
+                {open && (
+                    <MobileNavbar />
+                )}
+            </AnimatePresence>
         </nav>
     );
 }
@@ -52,6 +75,7 @@ interface NavLinkProps {
 function NavLink({ href, children, main }: NavLinkProps) {
     return (
         <Link
+            scroll={false}
             href={href}
             className={`md:text-lg hover:text-white-100 ease-in-out duration-200 ${main ? 'text-white-100' : 'text-white-200'}`}
         >
