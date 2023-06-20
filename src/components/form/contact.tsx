@@ -41,7 +41,7 @@ export function ContactForm() {
                 <Input.TextArea error={errors.message?.message} {...register('message')} />
                 <Input.Error message={errors.message?.message} />
             </Input.Wrapper>
-            <Button className='w-full max-w-full'>
+            <Button className='w-full md:max-w-full'>
                 Enviar
             </Button>
         </form>

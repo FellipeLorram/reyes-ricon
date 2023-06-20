@@ -10,7 +10,7 @@ export const TextAreaComponent = forwardRef<HTMLTextAreaElement, Props>(({ error
         <textarea
             className={`resize-none focus:border-violet-900 duration-150
                      ease-in-out w-full outline-none border-2
-                     bg-transparent rounded-md text-white p-2 
+                     bg-transparent rounded-md text-black p-2 
                      ${className}
                      ${error ? 'border-red-400' : 'border-zinc-400'}`}
             {...props}

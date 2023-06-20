@@ -15,11 +15,11 @@ export function Navbar() {
         { href: '#services', label: 'Serviços' },
         { href: '#about', label: 'Sobre' },
         { href: '#reviews', label: 'Reviews' },
-        { href: '#why-us', label: 'Porque Eu' },
+        { href: '#why-us', label: 'Porque Nós' },
         { href: '#contact', label: 'Contato' },
-        { href: '/instagram', label: <BrandInstagram className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
-        { href: '/facebook', label: <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
-        { href: '/twitter', label: <BrandFacebook className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
+        { href: 'http://google.com', label: <BrandInstagram className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
+        { href: 'http://google.com', label: <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
+        { href: 'http://google.com', label: <BrandFacebook className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
     ]
 
     return (
@@ -77,7 +77,7 @@ function NavLink({ href, children, main }: NavLinkProps) {
         <Link
             scroll={false}
             href={href}
-            className={`md:text-lg hover:text-white-100 ease-in-out duration-200 ${main ? 'text-white-100' : 'text-white-200'}`}
+            className={`md:text-base hover:text-white-100 ease-in-out duration-200 ${main ? 'text-white-100' : 'text-white-200'}`}
         >
             {children}
         </Link>
