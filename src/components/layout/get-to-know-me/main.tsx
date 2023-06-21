@@ -18,7 +18,7 @@ export function Main() {
                 <div className='w-full flex flex-col md:flex-row items-center self-stretch justify-center h-full md:p-8 p-4'>
 
                     <div className='items-center md:items-start flex flex-col gap-6 md:w-2/3'>
-                        <h1 className='md:text-6xl sm:text-5xl text-4xl font-bold md:leading-tight font-jakarta'>Realize seu projeto de Educação Digital!</h1>
+                        <h1 className='md:text-6xl sm:text-5xl text-4xl font-bold md:leading-tight font-jakarta'>Dê seu próximo passo em educação digital!</h1>
                         <p className='text-left md:text-left text-lg md:text-xl '>Venha para a Wasi!<br /> Aqui nós desenvolvemos e produzimos as soluções que você realmente precisa.
                         </p>
                         <Button onClick={() => setOnScreen(true)}>

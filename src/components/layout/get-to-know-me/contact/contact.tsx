@@ -15,7 +15,7 @@ export function Contact() {
                 background: 'linear-gradient(35deg,rgb(6,0,151) 0%,rgb(130,4,255) 73%,rgb(193,15,255) 100%)'
             }}
         >
-            <div className='w-full text-center'>
+            <div className='w-full text-left'>
                 <h1 className='text-4xl font-semibold font-jakarta md:text-6xl'>
                     Descubra seu potencial
                 </h1>

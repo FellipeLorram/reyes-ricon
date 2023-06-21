@@ -8,17 +8,17 @@ export function WhyUs() {
     const cards: CardProps[] = [
         {
             icon: <Passionate />,
-            title: 'Passionate',
+            title: 'Inovação',
             description: 'Somos caçadores de inovações na área de tecnologia e educação tanto no mercado quanto na Academia.'
         },
         {
             icon: <Professional />,
-            title: 'Professional',
+            title: 'Interdisciplinaridade',
             description: 'Com o nosso time você tem a certeza de contar com todas as competências necessárias para trazer o seu projeto à vida.'
         },
         {
             icon: <Support />,
-            title: 'Support',
+            title: 'Didática Moderna',
             description: `Design Instrucional, Gráfico e de Jogos
             Produção Audiovisual e Editorial
             Ludologia, Pedagogia e Andragogia
@@ -32,9 +32,9 @@ export function WhyUs() {
         >
             <div className='w-full flex flex-col gap-4 py-28'>
                 <h1 style={{ lineHeight: 1.3 }} className='text-3xl font-bold mb-6 font-jakarta text-[#1e293b] md:text-5xl'>
-                    Porque nós
+                    Nosso Time
                 </h1>
-                <div className='flex flex-col items-center md:flex-row justify-between'>
+                <div className='flex flex-col items-center md:flex-row md:items-start justify-between'>
                     {cards.map(({ icon, title, description }) => (
                         <Card key={title} icon={icon} title={title} description={description} />
                     ))}

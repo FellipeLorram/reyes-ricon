@@ -6,7 +6,8 @@ import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link'
 import React, { useState } from 'react'
 import MobileNavbar from './mobileNavbar';
-import { X } from 'lucide-react';
+import { LinkedinIcon, X } from 'lucide-react';
+import { NavLink } from './navLink';
 
 export function Navbar() {
     const [open, setOpen] = useState(false);
@@ -14,12 +15,12 @@ export function Navbar() {
     const links = [
         { href: '#services', label: 'Serviços' },
         { href: '#about', label: 'Sobre' },
-        { href: '#reviews', label: 'Reviews' },
-        { href: '#why-us', label: 'Porque Nós' },
+        // { href: '#reviews', label: 'Reviews' },
+        // { href: '#why-us', label: 'Porque Nós' },
         { href: '#contact', label: 'Contato' },
-        { href: 'http://google.com', label: <BrandInstagram className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
-        { href: 'http://google.com', label: <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
-        { href: 'http://google.com', label: <BrandFacebook className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
+        { href: 'http://google.com', label: <LinkedinIcon className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
+        // { href: 'http://google.com', label: <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
+        // { href: 'http://google.com', label: <BrandFacebook className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' /> },
     ]
 
     return (
@@ -28,7 +29,6 @@ export function Navbar() {
             <div>LOGO</div>
 
             <div className="md:flex flex-row gap-8 hidden">
-                <NavLink href='#home' main>Home</NavLink>
                 {links.map(({ href, label }) => (
                     <NavLink key={href} href={href}>
                         {label}
@@ -36,50 +36,35 @@ export function Navbar() {
                 ))}
             </div>
             <div className='md:hidden flex flex-row gap-4'>
-                <Link href='/contact'>
-                    <BrandInstagram className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
+                <Link target='_blank' href='https://www.linkedin.com/company/wasidl/about/'>
+                    <LinkedinIcon className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
                 </Link>
-                <Link href='/contact'>
-                    <BrandTwitter className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
-                </Link>
-                <Link href='/contact'>
-                    <BrandFacebook className='w-xs ease-in-out duration-200 stroke-white-200 hover:stroke-white-100' />
-                </Link>
+
                 {!open ? (
                     <MenuIcon
                         onClick={() => setOpen(true)}
                     />
 
                 ) : (
-                    <X  
-                        strokeWidth={1}
-                        onClick={() => setOpen(false)}
-                    />
+                    <div 
+                        className='flex items-center justify-center bg-opacity-95 bg-white-200 rounded-full w-8 h-8'
+                    >
+                        <X
+
+                            strokeWidth={2}
+                            onClick={() => setOpen(false)}
+                        />
+                    </div>
                 )}
             </div>
             <AnimatePresence>
                 {open && (
-                    <MobileNavbar />
+                    <MobileNavbar 
+                        setOpen={setOpen}
+                    />
                 )}
             </AnimatePresence>
         </nav>
     );
 }
 
-interface NavLinkProps {
-    href: string;
-    children: React.ReactNode;
-    main?: boolean;
-}
-
-function NavLink({ href, children, main }: NavLinkProps) {
-    return (
-        <Link
-            scroll={false}
-            href={href}
-            className={`md:text-base hover:text-white-100 ease-in-out duration-200 ${main ? 'text-white-100' : 'text-white-200'}`}
-        >
-            {children}
-        </Link>
-    )
-}

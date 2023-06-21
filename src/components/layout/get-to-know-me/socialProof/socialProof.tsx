@@ -1,13 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
 import { Wrapper } from '../../wrapper'
+import { motion } from 'framer-motion'
 
 const images = [
     { src: '/images/logo-ediouro.png', width: 91, height: 1016, alt: '' },
     { src: '/images/logo-fgv.png', width: 91, height: 4096, alt: '' },
     { src: '/images/logo-ismb.png', width: 91, height: 125, alt: '' },
     { src: '/images/logo-santillana.png', width: 91, height: 60, alt: '' },
-    { src: '/images/logo-descomplica.png', width: 91, height: 346, alt: '' },
+    { src: '/images/logo-fgvprojetos.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-incentivehouse.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-paperx.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-rioonibus.png', width: 91, height: 60, alt: '' },
+    // { src: '/images/logo-descomplica.png', width: 91, height: 346, alt: '' },
     { src: '/images/logo-ftdtrans.png', width: 91, height: 1204, alt: '' },
     { src: '/images/logo-moderna-rodape.png', width: 91, height: 43, alt: '' },
     { src: '/images/logo-richmod.png', width: 91, height: 36, alt: '' },
@@ -19,7 +24,11 @@ const images = [
     { src: '/images/logo-fgv.png', width: 91, height: 4096, alt: '' },
     { src: '/images/logo-ismb.png', width: 91, height: 125, alt: '' },
     { src: '/images/logo-santillana.png', width: 91, height: 60, alt: '' },
-    { src: '/images/logo-descomplica.png', width: 91, height: 346, alt: '' },
+    { src: '/images/logo-fgvprojetos.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-incentivehouse.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-paperx.png', width: 91, height: 60, alt: '' },
+    { src: '/images/logo-rioonibus.png', width: 91, height: 60, alt: '' },
+    // { src: '/images/logo-descomplica.png', width: 91, height: 346, alt: '' },
     { src: '/images/logo-ftdtrans.png', width: 91, height: 1204, alt: '' },
     { src: '/images/logo-moderna-rodape.png', width: 91, height: 43, alt: '' },
     { src: '/images/logo-richmod.png', width: 91, height: 36, alt: '' },
@@ -40,9 +49,14 @@ export function SocialProof() {
         >
             <div className='w-full flex flex-col gap-8 items-start justify-center '>
                 <h1 style={{ lineHeight: 1.3 }} className='text-3xl font-bold mb-6 font-jakarta text-[#1e293b] md:text-4xl'>
-                    Parceiros que transformaram <br/> suas ideias em realidade
+                    Parceiros que já confiaram<br /> nos nossos profissionais
                 </h1>
-                <div className='w-full gap-1 flex items-center justify-center scrollLeftAnimation'>
+                <motion.div
+                    initial={{ transform: 'translateX(0)' }}
+                    animate={{ transform: 'translateX(-180%)' }}
+                    transition={{ duration: 30, repeat: Infinity, }}
+                    className='w-full grid grid-rows-1 gap-2 grid-flow-col'
+                >
                     {images.map(({
                         src,
                         width,
@@ -59,17 +73,20 @@ export function SocialProof() {
                             />
                         </div>
                     ))}
-                </div>
-                <div
-                    className='w-full gap-1 flex items-center justify-center scrollLeftAnimation md:hidden'
+                </motion.div>
+                <motion.div
+                    initial={{ transform: 'translateX(0)' }}
+                    animate={{ transform: 'translateX(-180%)' }}
+                    transition={{ duration: 28, repeat: Infinity, }}
+                    className='md:hidden w-full grid grid-rows-1 gap-2 grid-flow-col'
                 >
                     {images.reverse().map(({
                         src,
                         width,
                         height,
                         alt
-                    }) => (
-                        <div key={src} className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
+                    }, index) => (
+                        <div key={index * 10} className='w-full bg-white-100 p-10 flex items-center justify-center rounded-xl h-32 md:h-40'>
                             <Image
                                 className='max-w-[120px] max-h-[120px] md:max-w-[150px] md:max-h-[150px] object-contain'
                                 src={src}
@@ -79,7 +96,7 @@ export function SocialProof() {
                             />
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </Wrapper>
     )
