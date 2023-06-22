@@ -40,7 +40,7 @@ export function ContactModal() {
                     <motion.div
                         onClick={(e) => e.stopPropagation()}
                         variants={modalVariants}
-                        className='w-11/12 max-w-2xl bg-white-100 rounded-lg shadow-lg p-10 z-50'
+                        className='w-11/12 max-w-2xl bg-white-100 rounded-lg shadow-lg p-4 sm:p-10 z-50'
                     >
                         <h1 className='text-2xl font-semibold font-jakarta text-gray48 text-center mb-4'>
                             Realize seu Projeto!
