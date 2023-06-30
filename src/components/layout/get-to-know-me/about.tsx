@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper } from '../wrapper';
 import Image from 'next/image';
 
-export default function About() {
+export  function About() {
     return (
         <Wrapper
             id='about'
@@ -22,7 +22,7 @@ export default function About() {
                 </div>
 
                 <div className='w-full md:w-1/2'>
-                    <Image src='/about-us.jpg' alt='' width={600} height={480} priority />
+                    <Image src='/images/team.png' alt='' width={600} height={480} priority />
                 </div>
             </div>
         </Wrapper>

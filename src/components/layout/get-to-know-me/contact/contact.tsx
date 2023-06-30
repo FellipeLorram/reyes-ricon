@@ -46,7 +46,7 @@ export function Contact() {
                     </div>
                     <div className='flex flex-row gap-4 items-center'>
                         <LinkedinIcon size={24} />
-                        <Link href='https://www.linkedin.com/company/wasidl/about/'>
+                        <Link target="_blank" href='https://www.linkedin.com/company/wasidl/about/'>
                             Wasi Educação Digital
                         </Link>
                     </div>

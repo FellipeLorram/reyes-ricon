@@ -1,29 +1,40 @@
 import { Blog } from '@/assets/svg/blog';
-import { Bulding } from '@/assets/svg/bulding';
+import { Projects } from '@/assets/svg/bulding';
 import { Portifolio } from '@/assets/svg/portifolio';
 import { ShoppingBag } from '@/assets/svg/shopping-bag';
 import React from 'react'
 import { Wrapper } from '../wrapper';
+import Image from 'next/image';
 
 export function Services() {
     const services = [
         {
-            icon: <Bulding />,
+            icon: <Projects />,
             title: 'Produção de Material Didático',
             description: 'Seja suas vídeoaulas, apresentações, PDFs ou mesmo jogos ou outras mídias que você possa sonhar, conte com a gente para produzir seu Materia Didático Digital'
         },
         {
-            icon: <Portifolio />,
+            icon: <Projects />,
             title: 'Projetos em Educação Digital',
             description: 'Precisa de uma solução, mas não sabe qual? Nós te ajudamos a entender seus desafios e necessidades e desenvolvemos seu projeto da ideação à avaliação.'
         },
         {
-            icon: <Blog />,
+            icon: <Image
+                src='/images/icons/BNCC.png'
+                width={48}
+                height={48}
+                alt='Icone de BNCC'
+            />,
             title: 'Adequação à BNCC',
             description: 'Use seu time de professores para desenvolver Itinerarios Formativos e atividades de alto impacto com o apoio de um time super inovador.'
         },
         {
-            icon: <ShoppingBag />,
+            icon: <Image
+                src='/images/icons/ludologia.png'
+                width={48}
+                height={48}
+                alt='Icone de ludologia'
+            />,
             title: 'Ludologia e Gamificação',
             description: 'Adicione mecanismos lúdicos ou transforme em jogo a qualquer processo da sua instituição de ensino para aumentar o engajamento do seu público alvo.'
         },

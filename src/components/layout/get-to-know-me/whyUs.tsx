@@ -13,12 +13,12 @@ export function WhyUs() {
         },
         {
             icon: <Professional />,
-            title: 'Interdisciplinaridade',
+            title: 'Pesquisa',
             description: 'Com o nosso time você tem a certeza de contar com todas as competências necessárias para trazer o seu projeto à vida.'
         },
         {
             icon: <Support />,
-            title: 'Didática Moderna',
+            title: 'Produção',
             description: `Design Instrucional, Gráfico e de Jogos
             Produção Audiovisual e Editorial
             Ludologia, Pedagogia e Andragogia
