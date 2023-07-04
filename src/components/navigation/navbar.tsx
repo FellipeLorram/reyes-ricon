@@ -21,7 +21,7 @@ export function Navbar() {
                 href='/'
             >
                 <Image
-                    src='/images/logo-wasi.png'
+                    src='/images/logos/logo-wasi.png'
                     alt='WASI Desenvolvimento'
                     width={100}
                     height={20}
