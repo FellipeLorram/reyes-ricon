@@ -14,11 +14,9 @@ export function Contact() {
         const response = await fetch('/api/contact', {
             method: 'POST',
             body: JSON.stringify(data)
-        })
-
-        if (response.ok) {
-            setFormInView(false);
-        }
+        });
+        
+        setFormInView(false);
     }
 
     return (
@@ -59,7 +57,7 @@ export function Contact() {
                             />
                         </AnimateWrapper>
                         <AnimateWrapper
-                            className='w-full md:w-1/2'
+                            className='hidden md:block w-full md:w-1/2'
                             variants={{
                                 hidden: {
                                     opacity: 0,
