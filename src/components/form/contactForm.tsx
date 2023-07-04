@@ -4,23 +4,25 @@ import { z } from 'zod'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from './controllers/input'
 import Button from '../button/button';
+import { ContactFormSchema, contactFormSchema } from '@/lib/schemas/contactFormSchema';
 
-const contactFormSchema = z.object({
-    name: z.string().min(3).max(255),
-    email: z.string().email(),
-    phone: z.string().min(10).max(11),
-    message: z.string().min(10).max(255),
-});
 
-type ContactFormSchema = z.infer<typeof contactFormSchema>;
+interface Props {
+    onSubmit: (data: ContactFormSchema) => void;
+    className?: string;
+}
 
-export function ContactForm() {
-    const { register, formState: { errors } } = useForm<ContactFormSchema>({
+export function ContactForm({ onSubmit, ...props }: Props) {
+    const { register, formState: { errors }, handleSubmit } = useForm<ContactFormSchema>({
         resolver: zodResolver(contactFormSchema),
     });
 
     return (
-        <form className='w-full gap-4 flex flex-col'>
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            {...props}
+            className={`gap-4 flex flex-col ${props.className}`}
+        >
             <Input.Wrapper>
                 <Input.Label label='Nome' />
                 <Input.Input type='text' error={errors.name?.message} {...register('name')} />
@@ -30,11 +32,6 @@ export function ContactForm() {
                 <Input.Label label='E-mail' />
                 <Input.Input type='email' error={errors.email?.message} {...register('email')} />
                 <Input.Error message={errors.email?.message} />
-            </Input.Wrapper>
-            <Input.Wrapper>
-                <Input.Label label='Telefone' />
-                <Input.Input type='tel' error={errors.phone?.message} {...register('phone')} />
-                <Input.Error message={errors.phone?.message} />
             </Input.Wrapper>
             <Input.Wrapper>
                 <Input.Label label='Mensagem' />

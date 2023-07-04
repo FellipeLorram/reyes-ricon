@@ -8,9 +8,9 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 export const InputComponent = forwardRef<HTMLInputElement, Props>(({ error, className, ...props }, ref) => {
     return (
         <input
-            className={`focus:border-violet-900 duration-150
+            className={`focus:border-violet-200 duration-150
                      ease-in-out w-full outline-none border-2
-                     bg-transparent rounded-md text-black p-2 
+                     bg-transparent rounded-md text-white-100 p-2 
                      ${className}
                      ${error ? 'border-red-400' : 'border-zinc-400'}`}
             {...props}

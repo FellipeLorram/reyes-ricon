@@ -1,23 +1,40 @@
 import React from 'react'
 import { Wrapper } from '../wrapper'
-import { Professional } from '@/assets/svg/professional';
-import { Passionate } from '@/assets/svg/passionate';
-import { Support } from '@/assets/svg/support';
+import Image from 'next/image';
+import { AnimateWrapper } from '@/components/animateWrapper';
 
 export function WhyUs() {
     const cards: CardProps[] = [
         {
-            icon: <Passionate />,
+            icon: <Image
+                className='w-16 h-16'
+                src='/images/icons/Inovação.png'
+                width={70}
+                height={70}
+                alt='Icone de Inovação'
+            />,
             title: 'Inovação',
             description: 'Somos caçadores de inovações na área de tecnologia e educação tanto no mercado quanto na Academia.'
         },
         {
-            icon: <Professional />,
+            icon: <Image
+                className='w-16 h-16'
+                src='/images/icons/pesquisa.png'
+                width={70}
+                height={70}
+                alt='Icone de pesquisa'
+            />,
             title: 'Pesquisa',
             description: 'Com o nosso time você tem a certeza de contar com todas as competências necessárias para trazer o seu projeto à vida.'
         },
         {
-            icon: <Support />,
+            icon: <Image
+                className='w-16 h-16'
+                src='/images/icons/producao.png'
+                width={70}
+                height={70}
+                alt='Icone de produção'
+            />,
             title: 'Produção',
             description: `Design Instrucional, Gráfico e de Jogos
             Produção Audiovisual e Editorial
@@ -35,8 +52,26 @@ export function WhyUs() {
                     Nosso Time
                 </h1>
                 <div className='flex flex-col items-center md:flex-row md:items-start justify-between'>
-                    {cards.map(({ icon, title, description }) => (
-                        <Card key={title} icon={icon} title={title} description={description} />
+                    {cards.map(({ icon, title, description }, i) => (
+                        <AnimateWrapper
+                            key={title}
+                            variants={{
+                                hidden: {
+                                    opacity: 0,
+                                    y: 75
+                                },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0
+                                }
+                            }}
+                            transition={{
+                                delay: i * 0.3,
+                                duration: 0.3
+                            }}
+                        >
+                            <Card key={title} icon={icon} title={title} description={description} />
+                        </AnimateWrapper>
                     ))}
                 </div>
             </div>
