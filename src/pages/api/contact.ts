@@ -14,7 +14,7 @@ export default async function handler(
       secure: true,
       auth: {
         user: 'contato@wasidl.com.br',
-        pass: 'rG2074@3lb'
+        pass: process.env.PASS
       }
     });
 
