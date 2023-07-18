@@ -7,26 +7,27 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const { name, email, message } = contactFormSchema.parse(req.body);
-    // const transporter = nodemailer.createTransport({
-    //   service: 'Gmail',
-    //   auth: {
-    //     user: 'fellipelorram@gmail.com',
-    //     pass: process.env.GMAIL_PASSWORD,
-    //   },
-    // });
+    const { name, email, message } = contactFormSchema.parse(JSON.parse(req.body));
+    const transporter = nodemailer.createTransport({
+      host: 'email-ssl.com.br',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'contato@wasidl.com.br',
+        pass: 'rG2074@3lb'
+      }
+    });
 
-    // const mailOptions = {
-    //   from: 'fellipelorram@gmail.com',
-    //   to: 'fellipelorram@gmail.com',
-    //   subject: 'Contato pelo site',
-    //   text: `Nome: ${name} \n Email: ${email} \n Mensagem: ${message}`,
-    // };
+    const mailOptions = {
+      from: 'contato@wasidl.com.br',
+      to: 'contato@wasidl.com.br',
+      subject: 'Contato pelo site',
+      text: `Nome: ${name} \n Email: ${email} \n Mensagem: ${message}`,
+    };
 
-    // await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
   } catch (e: any) {
     return res.status(400).json({ errors: e.message || 'Unexpected error.' });
   }
-
-  res.status(200);
+  return res.status(200).json({});
 }

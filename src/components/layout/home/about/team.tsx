@@ -14,49 +14,49 @@ export function Team() {
         {
             name: 'Maya Reyes Ricon',
             role: 'Fundadora & CEO',
-            image: '/avatar.jpg',
+            image: '/images/team/Maya-Reyes-Ricon.jpg',
             background: 'MSc. Admin. Pública'
         },
         {
             name: 'Luiz Eduardo Ricon',
             role: 'Educação',
-            image: '/avatar.jpg',
+            image: '/images/team/Luiz-Eduardo-Ricon.jpg',
             background: 'MSc. Educação'
         },
         {
             name: 'Zander Catta Preta',
             role: 'Produção Editorial',
-            image: '/avatar.jpg',
+            image: '/images/team/Zander-Catta-Preta.jpg',
             background: 'A.D. Produção Digital'
         },
         {
             name: 'Alonso Martines',
             role: 'Produção Visual',
-            image: '/avatar.jpg',
+            image: '/images/team/Alonso-Martines.jpg',
             background: 'MSc. Educação em Saúde'
         },
         {
             name: 'Pedro Reyes Ricon',
             role: 'Fundador & PM',
-            image: '/avatar.jpg',
+            image: '/images/team/Pedro-Reyes-Ricon.jpeg',
             background: 'Ba. RI'
         },
         {
             name: 'Rodrigo Sul',
             role: 'Tech Lead',
-            image: '/avatar.jpg',
+            image: '/images/team/Rodrigo-Sul.jpg',
             background: 'Ba. Tech'
         },
         {
             name: 'Felipe Antunes',
             role: 'Back End',
-            image: '/avatar.jpg',
+            image: '/images/team/Felipe-Antunes.jpg',
             background: 'Ba. Tech'
         },
         {
             name: 'Fellipe Lorram',
             role: 'Front End',
-            image: '/avatar.jpg',
+            image: '/images/team/Fellipe-Lorram.jpg',
             background: 'Ba. Tech'
         },
     ]
@@ -103,7 +103,7 @@ function TeamCard({ name, role, image, background }: TeamCardProps) {
                 alt=''
                 width={360}
                 height={360}
-                className='rounded-full max-w-[100px]'
+                className='rounded-full max-w-[100px] max-h-[100px]'
             />
             <div className='flex flex-col gap-2 text-center'>
                 <h1 className='text-sm font-bold font-jakarta text-[#1e293b]'>

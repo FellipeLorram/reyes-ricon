@@ -9,7 +9,7 @@ export function Services() {
         {
             icon: <Image
                 className='w-12 h-12'
-                src='/images/icons/producao.png'
+                src='/images/icons/didaticos.png'
                 width={70}
                 height={70}
                 alt='Icone de BNCC'

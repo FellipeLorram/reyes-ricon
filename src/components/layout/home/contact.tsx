@@ -11,11 +11,11 @@ export function Contact() {
     const [formInView, setFormInView] = useState(true);
 
     async function onSubmit(data: ContactFormSchema) {
-        const response = await fetch('/api/contact', {
+        await fetch('/api/contact', {
             method: 'POST',
             body: JSON.stringify(data)
         });
-        
+
         setFormInView(false);
     }
 
