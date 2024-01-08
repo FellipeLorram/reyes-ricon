@@ -1,6 +1,5 @@
 import React from 'react';
 import { Wrapper } from '../../wrapper';
-import Image from 'next/image';
 import { Team } from './team';
 import { AnimateWrapper } from '@/components/animateWrapper';
 

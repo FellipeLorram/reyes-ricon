@@ -30,6 +30,12 @@ export function Team() {
             background: 'A.D. Produção Digital'
         },
         {
+            name: 'Karine Ramos',
+            role: 'Gerente',
+            image: '/images/team/Karine-Ramos.jpeg',
+            background: 'Ba. Business'
+        },
+        {
             name: 'Alonso Martines',
             role: 'Produção Visual',
             image: '/images/team/Alonso-Martines.jpg',
@@ -101,9 +107,9 @@ function TeamCard({ name, role, image, background }: TeamCardProps) {
             <Image
                 src={image}
                 alt=''
-                width={360}
-                height={360}
-                className='rounded-full max-w-[100px] max-h-[100px]'
+                width={240}
+                height={240}
+                className='rounded-full max-w-[70px] max-h-[70px]'
             />
             <div className='flex flex-col gap-2 text-center'>
                 <h1 className='text-sm font-bold font-jakarta text-[#1e293b]'>

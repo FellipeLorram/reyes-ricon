@@ -8,6 +8,20 @@ export function WhyUs() {
         {
             icon: <Image
                 className='w-16 h-16'
+                src='/images/icons/producao.png'
+                width={70}
+                height={70}
+                alt='Icone de produção'
+            />,
+            title: 'Produção',
+            description: `Design Instrucional, Gráfico e de Jogos
+            Produção Audiovisual e Editorial
+            Ludologia, Pedagogia e Andragogia
+            Gestão e desenvolvimento de Produtos Digitais`
+        },
+        {
+            icon: <Image
+                className='w-16 h-16'
                 src='/images/icons/Inovação.png'
                 width={70}
                 height={70}
@@ -26,20 +40,6 @@ export function WhyUs() {
             />,
             title: 'Pesquisa',
             description: 'Com o nosso time você tem a certeza de contar com todas as competências necessárias para trazer o seu projeto à vida.'
-        },
-        {
-            icon: <Image
-                className='w-16 h-16'
-                src='/images/icons/producao.png'
-                width={70}
-                height={70}
-                alt='Icone de produção'
-            />,
-            title: 'Produção',
-            description: `Design Instrucional, Gráfico e de Jogos
-            Produção Audiovisual e Editorial
-            Ludologia, Pedagogia e Andragogia
-            Gestão e desenvolvimento de Produtos Digitais`
         },
     ]
 
