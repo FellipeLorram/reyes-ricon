@@ -1,12 +1,10 @@
-import { MenuIcon } from '@/assets/svg/menu';
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import { LinkedinIcon, X } from 'lucide-react';
 import { NavLink } from './navLink';
 import Image from 'next/image';
 
 export function Navbar() {
-    const [open, setOpen] = useState(false);
 
     const links = [
         { href: '#services', label: 'Produto' },
