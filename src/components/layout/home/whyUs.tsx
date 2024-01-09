@@ -17,7 +17,7 @@ export function WhyUs() {
             description: `Design Instrucional, Gráfico e de Jogos
             Produção Audiovisual e Editorial
             Ludologia, Pedagogia e Andragogia
-            Gestão e desenvolvimento de Produtos Digitais`
+            Gestão e desenvolvimento de Produtos Digitais.`
         },
         {
             icon: <Image

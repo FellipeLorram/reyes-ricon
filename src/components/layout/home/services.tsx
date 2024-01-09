@@ -15,7 +15,7 @@ export function Services() {
                 alt='Icone de BNCC'
             />,
             title: 'Produção de Material Didático',
-            description: 'Seja suas vídeoaulas, apresentações, PDFs ou mesmo jogos ou outras mídias que você possa sonhar, conte com a gente para produzir seu Materia Didático Digital'
+            description: 'Seja suas vídeoaulas, apresentações, PDFs ou mesmo jogos ou outras mídias que você possa sonhar, conte com a gente para produzir seu Material Didático Digital.'
         },
         {
             icon: <Projects />,

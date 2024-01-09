@@ -13,7 +13,7 @@ export function Team() {
     const team: TeamCardProps[] = [
         {
             name: 'Maya Reyes Ricon',
-            role: 'Fundadora & CEO',
+            role: 'Co-Fundadora & CEO',
             image: '/images/team/Maya-Reyes-Ricon.jpg',
             background: 'MSc. Admin. Pública'
         },
@@ -33,7 +33,7 @@ export function Team() {
             name: 'Karine Ramos',
             role: 'Gerente',
             image: '/images/team/Karine-Ramos.jpeg',
-            background: 'Ba. Business'
+            background: 'Ba. Tech'
         },
         {
             name: 'Alonso Martines',
@@ -43,7 +43,7 @@ export function Team() {
         },
         {
             name: 'Pedro Reyes Ricon',
-            role: 'Fundador & PM',
+            role: 'Co-Fundador & PM',
             image: '/images/team/Pedro-Reyes-Ricon.jpeg',
             background: 'Ba. RI'
         },
@@ -64,6 +64,12 @@ export function Team() {
             role: 'Front End',
             image: '/images/team/Fellipe-Lorram.jpg',
             background: 'Ba. Tech'
+        },
+        {
+            name: 'Giulia Marques',
+            role: 'Designer Gráfica',
+            image: '/images/team/Giulia-Marques.jpeg',
+            background: 'Ba. Design Gráfico'
         },
     ]
 

@@ -25,12 +25,12 @@ export function Footer() {
                         contato@wasidl.com.br
                     </Link>
                 </div>
-                <div className='flex flex-row gap-2 items-center'>
+                {/* <div className='flex flex-row gap-2 items-center'>
                     <Smartphone size={24} />
                     <Link href='https://wa.me/+5521976869119'>
                         +55 (21)97686-9119
                     </Link>
-                </div>
+                </div> */}
                 <div className='flex flex-row gap-2 items-center'>
                     <LinkedinIcon size={24} />
                     <Link target="_blank" href='https://www.linkedin.com/company/wasidl/about/'>
