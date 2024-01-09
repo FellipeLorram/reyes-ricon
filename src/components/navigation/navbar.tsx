@@ -1,8 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image';
 import React from 'react'
+
+import wasiLogo from '@/assets/images/logo-wasi.png';
+
 import { LinkedinIcon, X } from 'lucide-react';
 import { NavLink } from './navLink';
-import Image from 'next/image';
 
 export function Navbar() {
 
@@ -19,7 +22,7 @@ export function Navbar() {
                 href='/'
             >
                 <Image
-                    src='/images/logos/logo-wasi.png'
+                    src={wasiLogo}
                     alt='WASI Desenvolvimento'
                     width={100}
                     height={20}
